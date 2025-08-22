@@ -103,7 +103,7 @@ jobs:
 
       - name: Install dependencies
         working-directory: ./yaal
-        run: npm ci
+        run: npm install
 
       - name: Parse README and generate data
         working-directory: ./yaal
