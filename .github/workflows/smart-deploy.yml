@@ -24,8 +24,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # Monitor README.md and yaal submodule changes
+          # Monitor README.md, yaal.config.yaml, and yaal submodule changes
           README_PATTERN="^README.md"
+          CONFIG_PATTERN="^yaal.config.yaml"
           SUBMODULE_PATTERN="^yaal"
 
           # Use GitHub API to find last successful build-and-deploy commit
@@ -59,32 +60,32 @@ jobs:
                 echo "  - $file"
               done
               
-              # Check if README.md or yaal submodule changed
+              # Check if README.md, yaal.config.yaml, or yaal submodule changed
               README_CHANGED=false
+              CONFIG_CHANGED=false
               SUBMODULE_CHANGED=false
               while IFS= read -r file; do
                 if echo "$file" | grep -qE "$README_PATTERN"; then
                   README_CHANGED=true
+                fi
+                if echo "$file" | grep -qE "$CONFIG_PATTERN"; then
+                  CONFIG_CHANGED=true
                 fi
                 if echo "$file" | grep -qE "$SUBMODULE_PATTERN"; then
                   SUBMODULE_CHANGED=true
                 fi
               done <<< "$CHANGED_FILES"
               
-              if [ "$README_CHANGED" = true ] || [ "$SUBMODULE_CHANGED" = true ]; then
-                if [ "$README_CHANGED" = true ] && [ "$SUBMODULE_CHANGED" = true ]; then
-                  echo "🔍 README.md and yaal submodule changed - rebuild needed"
-                  echo "build-reason=README.md and yaal submodule changed" >> $GITHUB_OUTPUT
-                  echo "changed-files=README.md, yaal submodule" >> $GITHUB_OUTPUT
-                elif [ "$README_CHANGED" = true ]; then
-                  echo "🔍 README.md changed - rebuild needed"
-                  echo "build-reason=README.md changed" >> $GITHUB_OUTPUT
-                  echo "changed-files=README.md" >> $GITHUB_OUTPUT
-                else
-                  echo "🔍 yaal submodule changed - rebuild needed"
-                  echo "build-reason=yaal submodule changed" >> $GITHUB_OUTPUT
-                  echo "changed-files=yaal submodule" >> $GITHUB_OUTPUT
-                fi
+              # Build detailed reason
+              REASON="Changes detected:"
+              [ "$README_CHANGED" = true ] && REASON="$REASON README.md"
+              [ "$CONFIG_CHANGED" = true ] && REASON="$REASON config file"
+              [ "$SUBMODULE_CHANGED" = true ] && REASON="$REASON yaal submodule"
+              
+              if [ "$README_CHANGED" = true ] || [ "$CONFIG_CHANGED" = true ] || [ "$SUBMODULE_CHANGED" = true ]; then
+                echo "🔍 $REASON - rebuild needed"
+                echo "build-reason=$REASON" >> $GITHUB_OUTPUT
+                echo "changed-files=$(echo "$CHANGED_FILES" | head -20 | sed ':a;N;$!ba;s/\n/, /g')" >> $GITHUB_OUTPUT
                 BUILD_NEEDED=true
               else
                 echo "ℹ️  No relevant changes - no rebuild needed"
@@ -124,13 +125,17 @@ jobs:
         working-directory: ./yaal
         run: npm ci
 
+      - name: Generate configuration
+        working-directory: ./yaal
+        run: node scripts/generate-github-config.js --config=../yaal.config.yaml --readme=../README.md
+
       - name: Parse README and generate data
         working-directory: ./yaal
-        run: npm run parse-readme --readme=../README.md
+        run: node scripts/parse-readme.js --readme=../README.md
 
       - name: Build website
         working-directory: ./yaal
-        run: npm run build --readme=../README.md
+        run: npm run build --config=../yaal.config.yaml --readme=../README.md
 
       - name: Build Summary
         run: |
