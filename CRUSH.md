@@ -3,14 +3,14 @@
 ## Build/Lint/Test Commands
 **First run:** `cd yaal`
 
-- `npm run build --config=../yaal.config.yaml --readme=../README.md` - Build production bundle
-- `npm run dev --config=../yaal.config.yaml --readme=../README.md` - Development server
+- `npm run build` - Build production bundle (auto-detects config and README)
+- `npm run dev` - Development server (auto-detects config and README)
 - `npm run lint` - ESLint check
 - `npm run lint:fix` - Auto-fix ESLint issues
 - `npm run format` - Prettier formatting
 - `npm run format:check` - Check Prettier formatting
 - `npm run type-check` - TypeScript type checking
-- `npm run parse-readme --readme=../README.md` - Parse README to generate tool data
+- `npm run parse-readme` - Parse README to generate tool data
 - `npm run prepare` - Install Husky git hooks
 
 ## Code Style Guidelines
@@ -25,7 +25,7 @@
 - **Pre-commit**: Husky + lint-staged runs automatically
 
 ## Single Test/Script Commands
-- `cd yaal && node scripts/parse-readme.js --readme=../README.md` - Run single script
-- `cd yaal && node scripts/generate-github-config.js --config=../yaal.config.yaml --readme=../README.md` - Generate GitHub config
+- `cd yaal && node scripts/parse-readme.js` - Run single script
+- `cd yaal && node scripts/generate-github-config.js` - Generate GitHub config
 - Use `cd yaal && npm run type-check` for quick type validation
 - Use `cd yaal && npm run lint` for code quality checks
