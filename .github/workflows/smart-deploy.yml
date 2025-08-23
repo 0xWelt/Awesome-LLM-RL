@@ -136,6 +136,9 @@ jobs:
       - name: Build website
         working-directory: ./yaal
         run: npm run build
+        env:
+          npm_config_config: ../yaal.config.yaml
+          npm_config_readme: ../README.md
 
       - name: Build Summary
         run: |
