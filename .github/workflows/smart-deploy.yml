@@ -18,7 +18,6 @@ jobs:
         with:
           fetch-depth: 0 # Get full history
           submodules: true
-          submodules: true
 
       - name: Check if build is needed
         id: check
@@ -113,11 +112,11 @@ jobs:
 
       - name: Parse README and generate data
         working-directory: ./yaal
-        run: npm run parse-readme -- --readme=../README.md
+        run: npm run parse-readme --readme=../README.md
 
       - name: Build website
         working-directory: ./yaal
-        run: npm run build -- --readme=../README.md
+        run: npm run build --readme=../README.md
 
       - name: Build Summary
         run: |
