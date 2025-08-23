@@ -127,18 +127,15 @@ jobs:
 
       - name: Generate configuration
         working-directory: ./yaal
-        run: node scripts/generate-github-config.js --config=../yaal.config.yaml --readme=../README.md
+        run: node scripts/generate-github-config.js
 
       - name: Parse README and generate data
         working-directory: ./yaal
-        run: node scripts/parse-readme.js --readme=../README.md
+        run: node scripts/parse-readme.js
 
       - name: Build website
         working-directory: ./yaal
         run: npm run build
-        env:
-          npm_config_config: ../yaal.config.yaml
-          npm_config_readme: ../README.md
 
       - name: Build Summary
         run: |
