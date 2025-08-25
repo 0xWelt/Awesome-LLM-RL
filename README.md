@@ -18,6 +18,9 @@ A Curated List of Open-Source Projects, Tools, and Learning Resources about Rein
   - [verl](#verl)
   - [slime](#slime)
   - [ROLL](#roll)
+  - [AReaL](#areal)
+  - [ReaLHF](#realhf)
+  - [Safe-RLHF](#safe-rlhf)
 - [Runtime Engines](#runtime-engines)
   - [Inference Engines](#inference-engines)
     - [vLLM](#vllm)
@@ -54,7 +57,7 @@ ROLL is an efficient and user-friendly RL library from Alibaba designed for Larg
 
 AReaL (Ant Reasoning RL) is a distributed asynchronous reinforcement learning system for large reasoning models from Ant Research, built on ReaLHF for fully asynchronous RL training with 2.77x speedup over synchronous systems. Featuring AReaL-lite, a lightweight algorithm-first codebase with 80% fewer lines while maintaining 90% performance, supporting scalable training from single node to 1K+ GPUs. Provides comprehensive RL algorithms including PPO, GRPO, REINFORCE++, and multi-turn agentic RL with tool calling capabilities. Powers state-of-the-art reasoning models with cutting-edge performance in math and coding tasks, offering complete reproducibility with released code, datasets, and training recipes.
 
-### [ReaLHF](https://github.com/openpsi-project/ReaLHF) [Archived]
+### [ReaLHF](https://github.com/openpsi-project/ReaLHF)
 
 ReaLHF (ReaLlocation) is a distributed system for efficient RLHF training with LLMs featuring parameter reallocation technology that dynamically redistributes model parameters across clusters. Achieves state-of-the-art PPO training throughput through adaptive parallelization strategies, supporting high-throughput generation with CUDAGraph and 3D parallelism. Provides comprehensive RLHF algorithms including PPO, GRPO, DPO, and RAFT with seamless HuggingFace integration. Note: This project has been archived and development continues in [AReaL](https://github.com/inclusionAI/AReaL).
 
