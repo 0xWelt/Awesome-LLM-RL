@@ -32,8 +32,8 @@ jobs:
           echo "Package ecosystem: ${{ steps.metadata.outputs.package-ecosystem }}"
           echo "Update type: ${{ steps.metadata.outputs.update-type }}"
           
-          # Enable auto-merge
-          gh pr merge --rebase --auto "${{ github.event.pull_request.number }}" || {
+          # Use squash merge since rebase is disabled
+          gh pr merge --squash --auto "${{ github.event.pull_request.number }}" || {
             echo "Auto-merge failed, checking status..."
             gh pr view "${{ github.event.pull_request.number }}" --json mergeStateStatus,mergeable
             exit 1
