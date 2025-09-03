@@ -1,10 +1,13 @@
 name: Dependabot auto-merge
 on:
   pull_request:
+    types: [opened, synchronize, reopened]
 
 permissions:
   contents: write
   pull-requests: write
+  checks: read
+  actions: read
 
 jobs:
   dependabot:
@@ -13,16 +16,27 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          
       - name: Dependabot metadata
         id: metadata
         uses: dependabot/fetch-metadata@v2
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
 
-      - name: Auto-merge Dependabot PRs for submodules
+      - name: Enable auto-merge for submodules
         if: ${{ steps.metadata.outputs.package-ecosystem == 'submodules' }}
         run: |
-          gh pr merge --rebase --auto "${{ github.event.pull_request.number }}"
+          echo "Attempting to auto-merge PR #${{ github.event.pull_request.number }}"
+          echo "Package ecosystem: ${{ steps.metadata.outputs.package-ecosystem }}"
+          echo "Update type: ${{ steps.metadata.outputs.update-type }}"
+          
+          # Enable auto-merge
+          gh pr merge --rebase --auto "${{ github.event.pull_request.number }}" || {
+            echo "Auto-merge failed, checking status..."
+            gh pr view "${{ github.event.pull_request.number }}" --json mergeStateStatus,mergeable
+            exit 1
+          }
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
