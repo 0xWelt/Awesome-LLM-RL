@@ -10,6 +10,8 @@ A Curated List of Open-Source Projects, Tools, and Learning Resources about Rein
 
 🌐 **Live Website**: [https://0xWelt.github.io/Awesome-LLM-RL/](https://0xWelt.github.io/Awesome-LLM-RL/)
 
+![Awesome-LLM-RL](docs/Awesome-LLM-RL.png)
+
 ## Table of Contents
 
 - [Table of Contents](#table-of-contents)
