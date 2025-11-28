@@ -31,8 +31,9 @@ A Curated List of Open-Source Projects, Tools, and Learning Resources about Rein
     - [Megatron-LM](#megatron-lm)
     - [DeepSpeed](#deepspeed)
     - [PyTorch FSDP](#pytorch-fsdp)
-- [Star History](#star-history)
+- [Repo Status](#repo-status)
 - [Contributors](#contributors)
+- [Star History](#star-history)
 - [License](#license)
 
 ## RL Frameworks
@@ -100,9 +101,9 @@ DeepSpeed is Microsoft's deep learning optimization library that revolutionizes 
 
 PyTorch Fully Sharded Data Parallel (FSDP) is a memory-efficient distributed training engine that shards model parameters, gradients, and optimizer states across GPUs to enable training of large models that cannot fit on a single device. FSDP2 represents a major evolution with DTensor-based sharding for easy parameter manipulation, improved memory management with deterministic GPU usage, and flexible mixed precision policies supporting bfloat16 computation with float32 gradient reduction. It offers both implicit and explicit prefetching for overlapping communication with computation, supports meta-device initialization for large models, and provides seamless integration with PyTorch optimizers and gradient clipping. With tensor subclass extensions for float8 and NF4 quantization, FSDP enables efficient training of billion-parameter models while maintaining full compatibility with the PyTorch ecosystem.
 
-## Star History
+## Repo Status
 
-[![Star History Chart](https://api.star-history.com/svg?repos=0xWelt/Awesome-LLM-RL&type=Date)](https://star-history.com/#0xWelt/Awesome-LLM-RL&Date)
+![Alt](https://repobeats.axiom.co/api/embed/289c0923eda71c1f8fd41f1a4862bcc95964481e.svg "Repobeats analytics image")
 
 ## Contributors
 
@@ -111,6 +112,10 @@ This project exists thanks to all the people who contribute.
 <a href="https://github.com/0xWelt/Awesome-LLM-RL/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=0xWelt/Awesome-LLM-RL" />
 </a>
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=0xWelt/Awesome-LLM-RL&type=Date)](https://star-history.com/#0xWelt/Awesome-LLM-RL&Date)
 
 ## License
 
