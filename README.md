@@ -21,6 +21,7 @@ A Curated List of Open-Source Projects, Tools, and Learning Resources about Rein
   - [slime](#slime)
   - [ROLL](#roll)
   - [AReaL](#areal)
+  - [Halo](#halo)
   - [ReaLHF](#realhf)
   - [Safe-RLHF](#safe-rlhf)
 - [Runtime Engines](#runtime-engines)
@@ -59,6 +60,10 @@ ROLL is an efficient and user-friendly RL library from Alibaba designed for Larg
 ### [AReaL](https://github.com/inclusionAI/AReaL)
 
 AReaL (Ant Reasoning RL) is a distributed asynchronous reinforcement learning system for large reasoning models from Ant Research, built on ReaLHF for fully asynchronous RL training with 2.77x speedup over synchronous systems. Featuring AReaL-lite, a lightweight algorithm-first codebase with 80% fewer lines while maintaining 90% performance, supporting scalable training from single node to 1K+ GPUs. Provides comprehensive RL algorithms including PPO, GRPO, REINFORCE++, and multi-turn agentic RL with tool calling capabilities. Powers state-of-the-art reasoning models with cutting-edge performance in math and coding tasks, offering complete reproducibility with released code, datasets, and training recipes.
+
+### [Halo](https://github.com/whitecircle/halo)
+
+Halo is a distributed framework for pre-training, supervised fine-tuning, and fully asynchronous multi-turn reinforcement learning on native Hugging Face language and multimodal models. It supports FSDP2 and expert, context, tensor, and expert-tensor parallelism; vLLM or SGLang rollouts; fused kernels; and standard Hugging Face checkpoints.
 
 ### [ReaLHF](https://github.com/openpsi-project/ReaLHF)
 
