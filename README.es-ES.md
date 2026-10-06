@@ -21,6 +21,7 @@ Una lista curada de proyectos de código abierto, herramientas y recursos de apr
   - [slime](#slime)
   - [ROLL](#roll)
   - [AReaL](#areal)
+  - [Halo](#halo)
   - [ReaLHF](#realhf)
   - [Safe-RLHF](#safe-rlhf)
 - [Motores de Ejecución (Runtime)](#runtime-engines)
@@ -59,6 +60,10 @@ ROLL es una librería de RL eficiente y fácil de usar de Alibaba diseñada para
 ### [AReaL](https://github.com/inclusionAI/AReaL)
 
 AReaL (Ant Reasoning RL) es un sistema de aprendizaje por refuerzo asíncrono distribuido para modelos de razonamiento grandes de Ant Research, construido sobre ReaLHF para un entrenamiento de RL totalmente asíncrono con una aceleración de 2.77x sobre los sistemas síncronos. Cuenta con AReaL-lite, una base de código ligera centrada en el algoritmo con un 80% menos de líneas mientras mantiene el 90% del rendimiento, soportando un entrenamiento escalable desde un solo nodo hasta más de 1K GPUs. Proporciona algoritmos de RL exhaustivos incluyendo PPO, GRPO, REINFORCE++ y RL agéntico multivuelta con capacidades de llamada a herramientas. Impulsa modelos de razonamiento vanguardistas con un rendimiento puntero en tareas de matemáticas y codificación, ofreciendo reproducibilidad completa con el código, los conjuntos de datos y las recetas de entrenamiento publicados.
+
+### [Halo](https://github.com/whitecircle/halo)
+
+Halo es un framework distribuido para el preentrenamiento, el ajuste fino supervisado y el aprendizaje por refuerzo multivuelta totalmente asíncrono sobre modelos nativos de Hugging Face, tanto de lenguaje como multimodales. Soporta FSDP2 y paralelismo de expertos, de contexto, de tensores y de expertos-tensores; rollouts con vLLM o SGLang; kernels fusionados; y checkpoints estándar de Hugging Face.
 
 ### [ReaLHF](https://github.com/openpsi-project/ReaLHF)
 
