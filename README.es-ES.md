@@ -53,6 +53,8 @@ verl es una librería de entrenamiento de RL flexible, eficiente y lista para pr
 
 slime es un framework de post-entrenamiento de LLM de alto rendimiento de la Universidad de Tsinghua diseñado para el escalado de RL, proporcionando una integración nativa de SGLang con Megatron-LM para un entrenamiento eficiente y flujos de trabajo de generación de datos flexibles. Construido sobre una arquitectura modular con componentes de entrenamiento (Megatron), rollout (SGLang + router) y búfer de datos, permite una sincronización de parámetros y gestión de datos sin interrupciones. Soporta modelos densos como GLM-4-9B y Qwen3-4B, modelos MoE incluyendo GLM-4.5, Qwen3-30B-A3B y DeepSeek-R1, así como entrenamiento de agentes multivuelta con capacidades de llamada a herramientas. Cuenta con conversión de formato de checkpoints entre Hugging Face y formatos torch_dist de Megatron, entrenamiento distribuido basado en Ray y ejemplos exhaustivos para tareas de razonamiento, codificación y búsqueda. slime impulsa el entrenamiento de GLM-4.5 y proporciona soluciones listas para producción para post-entrenamiento de RL a gran escala con configuraciones de hasta 128xH100 GPUs.
 
+<!-- image: https://thudm.github.io/slime/_static/image/rl-world-en.png -->
+
 ### [ROLL](https://github.com/alibaba/ROLL)
 
 ROLL es una librería de RL eficiente y fácil de usar de Alibaba diseñada para modelos de lenguaje grandes que utilizan recursos de GPU a gran escala, mejorando significativamente el rendimiento de los LLM en la alineación con las preferencias humanas, el razonamiento complejo y los escenarios de interacción agéntica multivuelta. Aprovechando una arquitectura distribuida de múltiples roles con Ray para la asignación flexible de recursos y la programación de tareas heterogéneas, ROLL integra tecnologías punteras como Megatron-Core, SGLang y vLLM para acelerar el entrenamiento y la inferencia de modelos. Soporta entrenamiento de RL multitarea (RLVR) que cubre matemáticas, codificación, razonamiento general y RL agéntico para interacciones multivuelta, juegos y uso de herramientas. Cuenta con más de 20 configuraciones ricas de estrategia de RL, rollout paralelo asíncrono a nivel de muestra, rollout paralelo asíncrono a nivel de entorno y soporte exhaustivo de algoritmos incluyendo PPO, GRPO, Reinforce++, TOPR, RAFT++, GSPO, GiGPO y StarPO. Con AutoDeviceMapping para mapeo de dispositivos personalizado, capacidades extremas de offload/reload, soporte de entrenamiento LoRA e observabilidad integrada con SwanLab, WandB y TensorBoard.
@@ -64,6 +66,8 @@ AReaL (Ant Reasoning RL) es un sistema de aprendizaje por refuerzo asíncrono di
 ### [Halo](https://github.com/whitecircle/halo)
 
 Halo es un framework distribuido para el preentrenamiento, el ajuste fino supervisado y el aprendizaje por refuerzo multivuelta totalmente asíncrono sobre modelos nativos de Hugging Face, tanto de lenguaje como multimodales. Soporta FSDP2 y paralelismo de expertos, de contexto, de tensores y de expertos-tensores; rollouts con vLLM o SGLang; kernels fusionados; y checkpoints estándar de Hugging Face.
+
+<!-- image: https://repository-images.githubusercontent.com/1347394075/abec2f5b-9921-406d-a7a2-51defc9884ca -->
 
 ### [ReaLHF](https://github.com/openpsi-project/ReaLHF)
 
