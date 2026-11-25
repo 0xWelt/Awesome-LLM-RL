@@ -45,13 +45,9 @@ A Curated List of Open-Source Projects, Tools, and Learning Resources about Rein
 
 OpenRLHF is the first easy-to-use, high-performance open-source RLHF framework built on Ray, vLLM, ZeRO-3 and HuggingFace Transformers, designed to make RLHF training simple and accessible. It leverages Ray for efficient distributed scheduling, separating Actor, Reward, Reference, and Critic models across different GPUs to enable scalable training for models up to 70B+ parameters. Powered by vLLM and Auto Tensor Parallelism, it delivers high-throughput, memory-efficient sample generation that reduces 80% of RLHF training time spent on sample generation. Built on DeepSpeed's ZeRO-3 and AutoTP, it enables large model training without heavyweight frameworks while maintaining seamless HuggingFace integration. Supporting comprehensive RL algorithms including PPO, REINFORCE++, GRPO, RLOO, and Dr. GRPO, along with advanced features like Hybrid Engine scheduling, asynchronous training, agent-based RLHF, DPO/KTO optimization, and multi-modal support.
 
-<!-- image: https://opengraph.githubassets.com/3e470ced3156a715e9a240bb3e5cfb257b74b227a34afa3f792520bb73f79ded/OpenRLHF/OpenRLHF -->
-
 ### [verl](https://github.com/volcengine/verl)
 
 verl is a flexible, efficient and production-ready RL training library initiated by ByteDance Seed team, implementing the HybridFlow framework for large language models. Built on a hybrid-controller programming model, it enables flexible representation and efficient execution of complex post-training dataflows, supporting diverse RL algorithms including PPO, GRPO, GSPO, ReMax, REINFORCE++, RLOO, PRIME, DAPO, and DrGRPO. Seamlessly integrating with existing LLM infrastructure through modular APIs, verl supports FSDP, FSDP2, Megatron-LM for training and vLLM, SGLang, HF Transformers for rollout generation. Featuring 3D-HybridEngine for efficient actor model resharding, multi-modal RL support for vision-language models, multi-turn agent training with tool calling, and scaling up to 671B models with expert parallelism. Compatible with Hugging Face Transformers and Modelscope Hub, verl powers state-of-the-art reasoning models like Seed-Thinking-v1.5 and enables breakthrough research including DAPO achieving 50 points on AIME 2024.
-
-<!-- image: https://opengraph.githubassets.com/acb9026c4ff0cb65833d101d9cac6f43ec2e1eface925a0d3195295e0eb4b057/verl-project/verl -->
 
 ### [slime](https://github.com/THUDM/slime)
 
@@ -63,13 +59,9 @@ slime is a high-performance LLM post-training framework from Tsinghua University
 
 ROLL is an efficient and user-friendly RL library from Alibaba designed for Large Language Models utilizing Large Scale GPU resources, significantly enhancing LLM performance in human preference alignment, complex reasoning, and multi-turn agentic interaction scenarios. Leveraging a multi-role distributed architecture with Ray for flexible resource allocation and heterogeneous task scheduling, ROLL integrates cutting-edge technologies like Megatron-Core, SGLang and vLLM to accelerate model training and inference. Supporting multi-task RL training (RLVR) covering mathematics, coding, general reasoning, and agentic RL for multi-turn interactions, games, and tool use. Featuring over 20 rich RL strategy configurations, sample-level asynchronous parallel rollout, environment-level asynchronous parallel rollout, and comprehensive algorithm support including PPO, GRPO, Reinforce++, TOPR, RAFT++, GSPO, GiGPO, and StarPO. With AutoDeviceMapping for custom device mapping, extreme offload/reload capabilities, LoRA training support, and integrated observability with SwanLab, WandB, and TensorBoard.
 
-<!-- image: https://opengraph.githubassets.com/5783e81c1c651787541b255b65808e56eec63c17e2236f6c98cdfba47edc0a65/alibaba/ROLL -->
-
 ### [AReaL](https://github.com/inclusionAI/AReaL)
 
 AReaL (Ant Reasoning RL) is a distributed asynchronous reinforcement learning system for large reasoning models from Ant Research, built on ReaLHF for fully asynchronous RL training with 2.77x speedup over synchronous systems. Featuring AReaL-lite, a lightweight algorithm-first codebase with 80% fewer lines while maintaining 90% performance, supporting scalable training from single node to 1K+ GPUs. Provides comprehensive RL algorithms including PPO, GRPO, REINFORCE++, and multi-turn agentic RL with tool calling capabilities. Powers state-of-the-art reasoning models with cutting-edge performance in math and coding tasks, offering complete reproducibility with released code, datasets, and training recipes.
-
-<!-- image: https://opengraph.githubassets.com/89a4ed81e59af3272843cf0768f6172e539128391b7d80cf2b56b18d144139d9/areal-project/AReaL -->
 
 ### [Halo](https://github.com/whitecircle/halo)
 
@@ -81,13 +73,10 @@ Halo is a distributed framework for pre-training, supervised fine-tuning, and fu
 
 ReaLHF (ReaLlocation) is a distributed system for efficient RLHF training with LLMs featuring parameter reallocation technology that dynamically redistributes model parameters across clusters. Achieves state-of-the-art PPO training throughput through adaptive parallelization strategies, supporting high-throughput generation with CUDAGraph and 3D parallelism. Provides comprehensive RLHF algorithms including PPO, GRPO, DPO, and RAFT with seamless HuggingFace integration. Note: This project has been archived and development continues in [AReaL](https://github.com/inclusionAI/AReaL).
 
-<!-- image: https://opengraph.githubassets.com/942350d19ce7c9413780d6ddec759b84651c9ab9fff54272372d747aff5d9fa1/openpsi-project/ReaLHF -->
-
 ### [Safe-RLHF](https://github.com/PKU-Alignment/safe-rlhf)
 
-Safe-RLHF is the first framework for constrained value alignment via safe reinforcement learning from human feedback, developed by PKU-Alignment at Peking University. Features Safe RLHF methodology that incorporates safety constraints during training through reward and cost models, providing 1M+ human-labeled preference pairs for both helpfulness and harmlessness. Supports complete pipeline from SFT to RLHF with safety evaluation, including pre-trained Beaver models, reward/cost model checkpoints, and comprehensive safety metrics across 10+ harm dimensions. Offers seamless integration with LLaMA, OPT, Baichuan models and Chinese language support.
+Safe-RLHF is the first framework for constrained value alignment via safe reinforcement learning from human feedback, developed by PKU-Alignment at Peking University. Features Safe RLHF methodology that incorporates safety constraints during training through reward and cost models, providing 1M+ human-labeled preference pairs for both helpfulness and harmlessness. Supports complete pipeline from SFT to RLHF with safety evaluation, including pre-trained Beaver models, reward/cost model checkpoints, and comprehensive safety metrics across 10+ harm dimensions. Offers seamless integration with LLaMA, OPT, Baichuan models and Chinese language support. 
 
-<!-- image: https://opengraph.githubassets.com/7f5aa3afe7f2669021361b8722af9ede04ffdc6112a28bfd68946d5640c3ff6e/PKU-Alignment/safe-rlhf -->
 
 ## Runtime Engines
 
@@ -101,13 +90,9 @@ Safe-RLHF is the first framework for constrained value alignment via safe reinfo
 
 vLLM is a high-throughput and memory-efficient inference and serving engine for LLMs that delivers state-of-the-art serving performance through PagedAttention memory management, continuous batching, and optimized CUDA kernels. It supports seamless integration with Hugging Face models, offers OpenAI-compatible APIs, and provides comprehensive quantization support (GPTQ, AWQ, INT4/8, FP8) along with distributed inference capabilities across NVIDIA, AMD, Intel, and TPU hardware. Originally developed at UC Berkeley's Sky Computing Lab, vLLM now serves as a community-driven project powering major platforms like LMSYS Vicuna and Chatbot Arena.
 
-<!-- image: https://opengraph.githubassets.com/84e288b15ca0ab8ee945f0fd7749be82a7c49c4cdf544cc89240b67920efe64f/vllm-project/vllm -->
-
 #### [SGLang](https://github.com/sgl-project/sglang)
 
 SGLang is a fast serving framework for large language models and vision language models that co-designs backend runtime and frontend language for high-performance LLM applications. It features RadixAttention for prefix caching, zero-overhead CPU scheduler, prefill-decode disaggregation, speculative decoding, and continuous batching, while providing a Pythonic frontend for chained generation calls, advanced prompting, control flow, and multi-modal inputs. Supporting extensive model families (Llama, Qwen, DeepSeek, GPT, Gemma, etc.) and deployed at massive scale across 1M+ GPUs worldwide, SGLang powers trillions of tokens daily for leading enterprises including xAI, AMD, NVIDIA, Google Cloud, and Microsoft Azure.
-
-<!-- image: https://www.sglang.io/images/hero-illustrate.png?v=2 -->
 
 ### Training Engines
 
@@ -117,13 +102,9 @@ SGLang is a fast serving framework for large language models and vision language
 
 Megatron-LM is NVIDIA's GPU-optimized library for training transformer models at scale, providing state-of-the-art distributed training capabilities with comprehensive parallelism strategies including tensor, pipeline, data, context, and expert parallelism. It features Megatron Core as a composable library with optimized building blocks, supporting models from 2B to 462B+ parameters across thousands of GPUs with up to 47% Model FLOP Utilization. Supporting extensive model architectures (LLaMA, GPT, DeepSeek, Qwen, Mixtral, Mamba) with advanced features like FP8 training, FlashAttention, activation checkpointing, and fault-tolerant training, Megatron-LM powers production-scale training for leading enterprises and research institutions worldwide.
 
-<!-- image: https://opengraph.githubassets.com/9cbd369c1ede057bd3fa094f753d42bff8639de5a7b67d2d3218d8799c7b2d84/NVIDIA/Megatron-LM -->
-
 #### [DeepSpeed](https://github.com/deepspeedai/DeepSpeed)
 
 DeepSpeed is Microsoft's deep learning optimization library that revolutionizes distributed training and inference through four innovation pillars: training, inference, compression, and science applications. It features groundbreaking ZeRO (Zero Redundancy Optimizer) technology for memory optimization, enabling training of trillion-parameter models with ZeRO-Infinity, ZeRO-Offload, and ZeRO++ for extreme scale. Supporting 3D parallelism (data, tensor, pipeline), DeepSpeed-MoE for mixture-of-experts, and advanced compression techniques, it has powered world-record models like Megatron-Turing NLG 530B, BLOOM 176B, and Jurassic-1 178B. With seamless integration across PyTorch, Transformers, Lightning, and Azure, DeepSpeed delivers 15x speedup for ChatGPT-like RLHF training and unprecedented cost reduction at all scales.
-
-<!-- image: https://opengraph.githubassets.com/4da18352db0d1804c5dedf8634b9a808d2d1cb7f8a7c0126cf27804de1332b40/deepspeedai/DeepSpeed -->
 
 #### [PyTorch FSDP](https://pytorch.org/tutorials/intermediate/FSDP_tutorial.html)
 
