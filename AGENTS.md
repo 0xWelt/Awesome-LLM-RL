@@ -32,3 +32,9 @@ Prettier, Husky, and lint-staged are no longer used.
 - `cd yaal && vp node scripts/parse-readme.js` - Run single script
 - `cd yaal && vp node scripts/generate-github-config.js` - Generate GitHub config
 - Use `cd yaal && vp check` for quick quality validation
+
+## List data
+
+Stay in README mode (`README.md` and `README.es-ES.md`). Preview images do not require a `contents/` migration.
+
+Official previews follow yaal's list data rules (`yaal/AGENTS.md`, List data sources). `image` is optional. In README mode, put an absolute `https` URL after the entry as `<!-- image: https://... -->` (a bare `image:` line is also accepted). Use the product's official preview, typically its Open Graph image, including GitHub Open Graph for GitHub-only projects. Skip logos, app icons, unofficial screenshots, ads, and price-promotion cards. Do not commit image binaries. Keep `README.es-ES.md` in sync with the same comments.
